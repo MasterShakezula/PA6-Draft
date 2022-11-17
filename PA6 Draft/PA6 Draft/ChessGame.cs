@@ -250,10 +250,22 @@ namespace PA6_Draft
             }
             return true; 
         }
-        private bool IsStalemate(bool whiteKing)
-        {
-            return !IsCheck(whiteKing) && AllLegalMoves(whiteKing).Count == 0;
-        }
+        
+            private bool IsStalemate(bool whiteKing)
+            {
+                if (!IsCheck(whiteKing))
+                {
+
+                    foreach (Move move in AllLegalMoves(whiteKing))
+                    {
+                        if (TryLegalMove(move, whiteKing))
+                            return false;
+                    }
+                    return true;
+                }
+                return false;
+            }
+        
         private bool IsCheck(bool whiteKing)
         {
             Square kingSquare=null;
