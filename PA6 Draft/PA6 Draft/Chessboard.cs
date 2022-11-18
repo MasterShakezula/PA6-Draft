@@ -18,6 +18,7 @@ namespace PA6_Draft
         private ChessGame Game;
         private Square Picked;
         private Square Dropped;
+        BindingList<Move> moves = new BindingList<Move>();
         private Point PickedLocation;
         private Dictionary<Piece,Bitmap> PieceImages;//BlackPawn,WhitePawn,BlackRook,WhiteRook,BlackKnight,WhiteKnight,BlackBishop,WhiteBishop
                                                      //,BlackKing, WhiteKing, BlackQueen, WhiteQueen;
@@ -47,6 +48,10 @@ namespace PA6_Draft
             Player1.Text = Game.Player1Name;
             Player2.Text = Game.Player2Name;
             Game.Promote += Game_Promote;
+            
+            /*Game.WhiteTimeStart += Game_WhiteTimeStart;
+            Game.StopBothTimers += Game_StopBothTimers;
+            Game.MakeNoise += Game_MakeNoise;*/
             Picked = new Square(0,'z');
             Dropped = new Square(0, 'z');
             Board.Image = new Bitmap(512,512);
