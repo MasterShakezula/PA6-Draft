@@ -26,6 +26,7 @@ namespace PA6_Draft
 
         internal Chessboard(Color Light, Color Dark, ChessGame Game)
         {
+            this.listBox1.DataSource = this.moves;
             InitializeComponent();
 
             PieceImages = new Dictionary<Piece, Bitmap>();
