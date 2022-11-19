@@ -167,7 +167,7 @@ namespace PA6_Draft
     }
     class ChessGame
     {
-        internal event ChessEvent Promote, WhiteTimeStart, StopBothTimers, MakeNoise;
+        internal event ChessEvent Promote, WhiteTimeStart, StopBothTimers, MakeNoise;  
         // above events are likely needed. Promote was already established. 
         internal Square[][] Board { get; }
         private Square EnPassant = null;
