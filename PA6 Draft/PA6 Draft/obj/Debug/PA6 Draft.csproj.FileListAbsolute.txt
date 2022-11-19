@@ -45,3 +45,27 @@ C:\Users\Samue\Downloads\PA6 Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6 Draft.cspro
 C:\Users\Samue\Downloads\PA6 Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6 Draft.csproj.CoreCompileInputs.cache
 C:\Users\Samue\Downloads\PA6 Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6 Draft.exe
 C:\Users\Samue\Downloads\PA6 Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6 Draft.pdb
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\bin\Debug\bb.png
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\bin\Debug\bk.png
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\bin\Debug\bkn.png
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\bin\Debug\bp.png
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\bin\Debug\bq.png
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\bin\Debug\br.png
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\bin\Debug\wb.png
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\bin\Debug\wk.png
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\bin\Debug\wkn.png
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\bin\Debug\wp.png
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\bin\Debug\wq.png
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\bin\Debug\wr.png
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\bin\Debug\PA6 Draft.exe.config
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\bin\Debug\PA6 Draft.exe
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\bin\Debug\PA6 Draft.pdb
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6 Draft.csproj.AssemblyReference.cache
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6 Draft.csproj.SuggestedBindingRedirects.cache
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6_Draft.Chessboard.resources
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6_Draft.MainForm.resources
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6_Draft.Properties.Resources.resources
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6 Draft.csproj.GenerateResource.cache
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6 Draft.csproj.CoreCompileInputs.cache
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6 Draft.exe
+C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6 Draft.pdb

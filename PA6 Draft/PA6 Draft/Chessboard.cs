@@ -189,8 +189,11 @@ namespace PA6_Draft
                     MainTimer.Stop();
                     MessageBox.Show(Game.Player1Name + " lost by timeout");
                 }
-                else  
+                else
+                {
                     Game.WhiteTimeLimit = Game.TimeToString(Game.WLimit -= MainTimer.Interval);
+                    Player1Time.Text = Game.WhiteTimeLimit;
+                }
             }
             else
             {
@@ -202,7 +205,11 @@ namespace PA6_Draft
                     MessageBox.Show(Game.Player2Name + " lost by timeout");
                 }
                 else
+                {
                     Game.BlackTimeLimit = Game.TimeToString(Game.BLimit -= MainTimer.Interval);
+                    Player2Time.Text = Game.BlackTimeLimit;
+                }
+                    
             }
         }
 
