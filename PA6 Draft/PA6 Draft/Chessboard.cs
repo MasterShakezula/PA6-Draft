@@ -60,8 +60,14 @@ namespace PA6_Draft
             Game.Promote += Game_Promote;
             Game.WhiteTimeStart += Game_WhiteTimeStart;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             //Game.StopBothTimers += Game_StopBothTimers;
             //Game.MakeNoise += Game_MakeNoise;
+=======
+            Game.StopBothTimers += Game_StopBothTimers;
+            Game.MakeNoise += Game_Noise;
+            
+>>>>>>> Stashed changes
 =======
             Game.StopBothTimers += Game_StopBothTimers;
             Game.MakeNoise += Game_Noise;
@@ -81,7 +87,10 @@ namespace PA6_Draft
 
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
        
        
         private object Game_Noise(Move move) //move piece

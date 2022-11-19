@@ -806,7 +806,10 @@ namespace PA6_Draft
             move.Checkmate = IsCheckmate(!WhiteTurn);
             move.Stalemate = IsStalemate(!WhiteTurn);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 
             if (move.Stalemate || move.Checkmate) StopBothTimers(move);
 
