@@ -49,7 +49,9 @@ namespace PA6_Draft
             Player1.Text = Game.Player1Name;
             Player2.Text = Game.Player2Name;
             Game.Promote += Game_Promote;
-
+            this.Player1Time.Text = Game.WhiteTimeLimit; // test
+            this.Player2Time.Text = Game.BlackTimeLimit; //test
+            // copy initial values to the text boxes.
             /*Game.WhiteTimeStart += Game_WhiteTimeStart;
             Game.StopBothTimers += Game_StopBothTimers;
             Game.MakeNoise += Game_MakeNoise;*/

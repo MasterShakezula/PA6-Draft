@@ -176,6 +176,7 @@ namespace PA6_Draft
         internal long WLimit;
         internal long BLimit;
         internal string Player1Name;
+        
         internal string Player2Name;
         internal string WhiteTimeLimit;
         internal string BlackTimeLimit;
@@ -214,6 +215,7 @@ namespace PA6_Draft
             Player2Name = player2;
             WhiteTimeLimit = TimeToString(WLimit);
             BlackTimeLimit = TimeToString(BLimit);
+            
             Board = new Square[8][];
             for (int i = 0; i < 8; i++)
                 Board[i] = new Square[8];
