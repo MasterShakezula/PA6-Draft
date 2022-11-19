@@ -60,12 +60,21 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="PromoteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PromoteForm.Designer.cs">
+      <DependentUpon>PromoteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Chessboard.resx">
       <DependentUpon>Chessboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PromoteForm.resx">
+      <DependentUpon>PromoteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,7 +85,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\Chessboard.datasource" />
+    <None Include="Properties\DataSources\ChessGame.datasource" />
+    <None Include="Properties\DataSources\MainForm.datasource" />
+    <None Include="Properties\DataSources\Move.datasource" />
     <None Include="Properties\DataSources\MoveString.datasource" />
+    <None Include="Properties\DataSources\PA6_Draft.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\PA6_Draft.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\Square.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -50,8 +50,8 @@ namespace PA6_Draft
             Player1.Text = Game.Player1Name;
             Player2.Text = Game.Player2Name;
             Game.Promote += Game_Promote;
-           Game.WhiteTimeStart += Game_WhiteTimeStart;
-            Game.StopBothTimers += Game_StopBothTimers;
+            Game.WhiteTimeStart += Game_WhiteTimeStart;
+            //Game.StopBothTimers += Game_StopBothTimers;
             //Game.MakeNoise += Game_MakeNoise;
             this.Player1Time.Text = Game.WhiteTimeLimit; // test
             this.Player2Time.Text = Game.BlackTimeLimit; //test
@@ -65,11 +65,6 @@ namespace PA6_Draft
             this.listBox1.DataSource = this.moves;
             //moves.Add(1);
 
-        }
-        private object Game_StopBothTimers(Move move)
-        {
-            this.MainTimer.Stop();
-            return false;
         }
         private object Game_WhiteTimeStart(Move move)
         {
@@ -85,7 +80,25 @@ namespace PA6_Draft
         private object Game_Promote(Move move)
         {
             // make changes...
-            return ((int)move.MovedPiece % 2 == 0) ? Promotion.BQUEEN : Promotion.WQUEEN;
+            PromoteForm pf = new PromoteForm();
+            pf.ShowDialog();
+            if(pf.promoChoice == "Queen")
+            {
+                return ((int)move.MovedPiece % 2 == 0) ? Promotion.BQUEEN : Promotion.WQUEEN;
+            }
+            if (pf.promoChoice == "Knight")
+            {
+                return ((int)move.MovedPiece % 2 == 0) ? Promotion.BKNIGHT : Promotion.WKNIGHT;
+            }
+            if (pf.promoChoice == "Rook")
+            {
+                return ((int)move.MovedPiece % 2 == 0) ? Promotion.BROOK : Promotion.WROOK;
+            }
+            if (pf.promoChoice == "Bishop")
+            {
+                return ((int)move.MovedPiece % 2 == 0) ? Promotion.BBISHOP : Promotion.WBISHOP;
+            }
+            return null;
         }
         private void Board_MouseDown(object sender, MouseEventArgs e)
         {

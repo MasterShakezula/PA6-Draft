@@ -251,6 +251,7 @@ namespace PA6_Draft
                 if (TryLegalMove(move,whiteKing))
                     return false;
             }
+          
             return true; 
         }
         
@@ -797,8 +798,6 @@ namespace PA6_Draft
                 BlackTimeLimit = TimeToString(BLimit += Increment);
             move.Checkmate = IsCheckmate(!WhiteTurn);
             move.Stalemate = IsStalemate(!WhiteTurn);
-            if (move.Stalemate || move.Checkmate) StopBothTimers(move);
-
             move.Check = IsCheck(!WhiteTurn) && !move.Checkmate;
             Moves.Add(move);
             
