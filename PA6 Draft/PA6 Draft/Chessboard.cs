@@ -50,9 +50,9 @@ namespace PA6_Draft
             Player1.Text = Game.Player1Name;
             Player2.Text = Game.Player2Name;
             Game.Promote += Game_Promote;
-           /* Game.WhiteTimeStart += Game_WhiteTimeStart;
-            Game.StopBothTimers += Game_StopBothTimers;
-            Game.MakeNoise += Game_MakeNoise;*/
+           Game.WhiteTimeStart += Game_WhiteTimeStart;
+            //Game.StopBothTimers += Game_StopBothTimers;
+            //Game.MakeNoise += Game_MakeNoise;
             this.Player1Time.Text = Game.WhiteTimeLimit; // test
             this.Player2Time.Text = Game.BlackTimeLimit; //test
             // copy initial values to the text boxes.
@@ -66,14 +66,15 @@ namespace PA6_Draft
             //moves.Add(1);
 
         }
-        private void Game_WhiteTimeStart()
+        private object Game_WhiteTimeStart(Move move)
         {
             if (!GameStarted)
             {
                 this.MainTimer.Start();
                 GameStarted = true;
+                return false;
             }
-            else return;
+            else return false; 
            
         }
         private object Game_Promote(Move move)
@@ -83,7 +84,7 @@ namespace PA6_Draft
         }
         private void Board_MouseDown(object sender, MouseEventArgs e)
         {
-            Game_WhiteTimeStart();
+            //Game_WhiteTimeStart();
             //moves.Add(0);
             int sizeUnit = (int)Math.Round(Board.Image.Width / 16.0);
             int X = e.X / (2*sizeUnit);

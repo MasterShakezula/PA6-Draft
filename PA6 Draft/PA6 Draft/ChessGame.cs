@@ -615,6 +615,7 @@ namespace PA6_Draft
         {
             if (!LegalMove(move,false))
                 return false;
+            WhiteTimeStart(move);
             int x1 = move.X1, y1 = move.Y1, x2 = move.X2, y2 = move.Y2;
             move.MovedPiece = Board[x1][y1].Occupant;
             bool readyForEnPassant = false;
