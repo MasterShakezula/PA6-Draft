@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Media;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,7 @@ namespace PA6_Draft
     {
         private Brush LightColor;
         private Brush DarkColor;
+        private SoundPlayer s, t, u, v, w, x;
         private SoundPlayer s, t, u, v, w, x;
         private bool GameStarted = false;
         private Brush Highlighted;
@@ -58,21 +60,19 @@ namespace PA6_Draft
             Player1.Text = Game.Player1Name;
             Player2.Text = Game.Player2Name;
             Game.Promote += Game_Promote;
-            Game.WhiteTimeStart += Game_WhiteTimeStart;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+             Game.WhiteTimeStart += Game_WhiteTimeStart;
+
             //Game.StopBothTimers += Game_StopBothTimers;
             //Game.MakeNoise += Game_MakeNoise;
-=======
+
             Game.StopBothTimers += Game_StopBothTimers;
             Game.MakeNoise += Game_Noise;
             
->>>>>>> Stashed changes
-=======
+
             Game.StopBothTimers += Game_StopBothTimers;
             Game.MakeNoise += Game_Noise;
             
->>>>>>> Stashed changes
+
             this.Player1Time.Text = Game.WhiteTimeLimit; // test
             this.Player2Time.Text = Game.BlackTimeLimit; //test
             // copy initial values to the text boxes.
@@ -86,11 +86,43 @@ namespace PA6_Draft
             //moves.Add(1);
 
         }
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
+
+       
+       
+        private object Game_Noise(Move move) //move piece
+        {
+            if ( (Game.WLimit <= 10000 && !Game.WhiteTurn ) || Game.BLimit <= 10000 && Game.WhiteTurn )
+            {
+                s.Play();
+                return false;
+            }
+            else if (move.Stalemate)
+            {
+                t.Play();
+                return false;
+            }
+            else if (move.CapturedPiece != Piece.NONE)
+            {
+                u.Play();
+                return false;
+            }
+            else if (move.Check)
+            {
+                v.Play();
+                return false;
+            }
+            else if (move.Checkmate)
+            {
+                w.Play();
+                return false;
+            }
+            else
+            {
+                x.Play();
+                return false;
+            }
+            
+        }
        
        
         private object Game_Noise(Move move) //move piece
@@ -132,7 +164,7 @@ namespace PA6_Draft
             this.MainTimer.Stop();
             return false;
         }
->>>>>>> Stashed changes
+
         private object Game_WhiteTimeStart(Move move)
         {
             if (!GameStarted)
@@ -282,18 +314,22 @@ namespace PA6_Draft
             if (Game.WhiteTurn)
             {
                 
+                
                 if (Game.WLimit <= MainTimer.Interval)
                 {
+                    
                     
                     Game.WhiteTimeLimit = "0.00";
                     Game.WLimit = 0;
                     MainTimer.Stop();
                     MessageBox.Show(Game.Player1Name + " lost by timeout");
                   
+                  
                 }
                 else
                 {
                     Game.WhiteTimeLimit = Game.TimeToString(Game.WLimit -= MainTimer.Interval);
+                    
                     
                     Player1Time.Text = Game.WhiteTimeLimit;
                 }
@@ -301,12 +337,14 @@ namespace PA6_Draft
             else
             {
                 
+                
                 if (Game.BLimit <= MainTimer.Interval)
                 {
                     Game.BlackTimeLimit = "0.00";
                     Game.BLimit = 0;
                     MainTimer.Stop();
                     MessageBox.Show(Game.Player2Name + " lost by timeout");
+                    
                     
                 }
                 else
