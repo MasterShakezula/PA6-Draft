@@ -796,6 +796,7 @@ namespace PA6_Draft
             move.Stalemate = IsStalemate(!WhiteTurn);
             move.Check = IsCheck(!WhiteTurn) && !move.Checkmate;
             Moves.Add(move);
+            
             WhiteTurn = !WhiteTurn;
             return true;
         }

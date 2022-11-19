@@ -22,11 +22,11 @@ namespace PA6_Draft
         private Point PickedLocation;
         private Dictionary<Piece,Bitmap> PieceImages;//BlackPawn,WhitePawn,BlackRook,WhiteRook,BlackKnight,WhiteKnight,BlackBishop,WhiteBishop
                                                      //,BlackKing, WhiteKing, BlackQueen, WhiteQueen;
-        
+
 
         internal Chessboard(Color Light, Color Dark, ChessGame Game)
         {
-            this.listBox1.DataSource = this.moves;
+
             InitializeComponent();
 
             PieceImages = new Dictionary<Piece, Bitmap>();
@@ -49,14 +49,18 @@ namespace PA6_Draft
             Player1.Text = Game.Player1Name;
             Player2.Text = Game.Player2Name;
             Game.Promote += Game_Promote;
-            
+
             /*Game.WhiteTimeStart += Game_WhiteTimeStart;
             Game.StopBothTimers += Game_StopBothTimers;
             Game.MakeNoise += Game_MakeNoise;*/
-            Picked = new Square(0,'z');
+            Picked = new Square(0, 'z');
             Dropped = new Square(0, 'z');
-            Board.Image = new Bitmap(512,512);
-            Board_Paint(null,null);
+            Board.Image = new Bitmap(512, 512);
+            Board_Paint(null, null);
+            
+            this.listBox1.DataSource = this.moves;
+            //moves.Add(1);
+
         }
         private object Game_Promote(Move move)
         {
@@ -65,6 +69,7 @@ namespace PA6_Draft
         }
         private void Board_MouseDown(object sender, MouseEventArgs e)
         {
+            //moves.Add(0);
             int sizeUnit = (int)Math.Round(Board.Image.Width / 16.0);
             int X = e.X / (2*sizeUnit);
             int Y = e.Y / (2 * sizeUnit);
@@ -91,11 +96,18 @@ namespace PA6_Draft
             int Y = e.Y / (2 * sizeUnit);
             bool Success = Game.Move(new Move(Picked.File - 'a', 8 - Picked.Rank, X, Y));
             if(Success)
+            {
                 Dropped = new Square(Game.Board[X][Y].Rank,
                                     Game.Board[X][Y].File,
                                     Game.Board[X][Y].Occupant);
+                this.moves.Add(new Move(Picked.File - 'a', 8 - Picked.Rank, X, Y)); //test
+                //this.moves.Add(MoveDropped);
+            }
+                
             Picked.Occupant = Piece.NONE ;
             Board.Invalidate();
+            
+           
         }
 
         private void Board_MouseMove(object sender, MouseEventArgs e)
