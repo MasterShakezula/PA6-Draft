@@ -42,12 +42,12 @@
             // 
             // Board
             // 
-            this.Board.Location = new System.Drawing.Point(18, 57);
-            this.Board.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Board.MaximumSize = new System.Drawing.Size(768, 788);
-            this.Board.MinimumSize = new System.Drawing.Size(768, 788);
+            this.Board.Location = new System.Drawing.Point(16, 46);
+            this.Board.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Board.MaximumSize = new System.Drawing.Size(683, 630);
+            this.Board.MinimumSize = new System.Drawing.Size(683, 630);
             this.Board.Name = "Board";
-            this.Board.Size = new System.Drawing.Size(768, 788);
+            this.Board.Size = new System.Drawing.Size(683, 630);
             this.Board.TabIndex = 0;
             this.Board.TabStop = false;
             this.Board.Paint += new System.Windows.Forms.PaintEventHandler(this.Board_Paint);
@@ -63,10 +63,10 @@
             this.Player2Time.Enabled = false;
             this.Player2Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Player2Time.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Player2Time.Location = new System.Drawing.Point(710, 17);
-            this.Player2Time.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Player2Time.Location = new System.Drawing.Point(631, 14);
+            this.Player2Time.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Player2Time.Name = "Player2Time";
-            this.Player2Time.Size = new System.Drawing.Size(76, 28);
+            this.Player2Time.Size = new System.Drawing.Size(68, 23);
             this.Player2Time.TabIndex = 1;
             // 
             // Player1Time
@@ -76,10 +76,10 @@
             this.Player1Time.Enabled = false;
             this.Player1Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Player1Time.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Player1Time.Location = new System.Drawing.Point(710, 854);
-            this.Player1Time.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Player1Time.Location = new System.Drawing.Point(631, 683);
+            this.Player1Time.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Player1Time.Name = "Player1Time";
-            this.Player1Time.Size = new System.Drawing.Size(76, 28);
+            this.Player1Time.Size = new System.Drawing.Size(68, 23);
             this.Player1Time.TabIndex = 2;
             // 
             // listBox1
@@ -88,11 +88,11 @@
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.ForeColor = System.Drawing.Color.AliceBlue;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 29;
-            this.listBox1.Location = new System.Drawing.Point(808, 69);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listBox1.ItemHeight = 25;
+            this.listBox1.Location = new System.Drawing.Point(718, 55);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(350, 758);
+            this.listBox1.Size = new System.Drawing.Size(312, 604);
             this.listBox1.TabIndex = 9;
             // 
             // MainTimer
@@ -108,10 +108,10 @@
             this.Player2.Enabled = false;
             this.Player2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Player2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Player2.Location = new System.Drawing.Point(18, 17);
-            this.Player2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Player2.Location = new System.Drawing.Point(16, 14);
+            this.Player2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Player2.Name = "Player2";
-            this.Player2.Size = new System.Drawing.Size(242, 28);
+            this.Player2.Size = new System.Drawing.Size(215, 23);
             this.Player2.TabIndex = 10;
             // 
             // Player1
@@ -121,17 +121,17 @@
             this.Player1.Enabled = false;
             this.Player1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Player1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Player1.Location = new System.Drawing.Point(18, 854);
-            this.Player1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Player1.Location = new System.Drawing.Point(16, 683);
+            this.Player1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Player1.Name = "Player1";
-            this.Player1.Size = new System.Drawing.Size(242, 28);
+            this.Player1.Size = new System.Drawing.Size(215, 23);
             this.Player1.TabIndex = 11;
             // 
             // Chessboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1194, 912);
+            this.ClientSize = new System.Drawing.Size(1061, 731);
             this.Controls.Add(this.Player1);
             this.Controls.Add(this.Player2);
             this.Controls.Add(this.listBox1);
@@ -139,7 +139,7 @@
             this.Controls.Add(this.Player2Time);
             this.Controls.Add(this.Board);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Chessboard";
             this.Text = "Chessboard";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Chessboard_FormClosed);
