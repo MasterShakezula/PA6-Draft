@@ -70,3 +70,4 @@ C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6 Draf
 C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6 Draft.exe
 C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6 Draft.pdb
 C:\Users\ernes\Documents\GitHub\PA6-Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6_Draft.PromoteForm.resources
+C:\Users\Samue\Downloads\PA6 Draft\PA6 Draft\PA6 Draft\obj\Debug\PA6_Draft.PromoteForm.resources
