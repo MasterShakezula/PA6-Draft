@@ -14,6 +14,7 @@ namespace PA6_Draft
     {
         private Brush LightColor;
         private Brush DarkColor;
+        private bool GameStarted = false;
         private Brush Highlighted;
         private ChessGame Game;
         private Square Picked;
@@ -49,12 +50,13 @@ namespace PA6_Draft
             Player1.Text = Game.Player1Name;
             Player2.Text = Game.Player2Name;
             Game.Promote += Game_Promote;
+           /* Game.WhiteTimeStart += Game_WhiteTimeStart;
+            Game.StopBothTimers += Game_StopBothTimers;
+            Game.MakeNoise += Game_MakeNoise;*/
             this.Player1Time.Text = Game.WhiteTimeLimit; // test
             this.Player2Time.Text = Game.BlackTimeLimit; //test
             // copy initial values to the text boxes.
-            /*Game.WhiteTimeStart += Game_WhiteTimeStart;
-            Game.StopBothTimers += Game_StopBothTimers;
-            Game.MakeNoise += Game_MakeNoise;*/
+            
             Picked = new Square(0, 'z');
             Dropped = new Square(0, 'z');
             Board.Image = new Bitmap(512, 512);
@@ -64,6 +66,16 @@ namespace PA6_Draft
             //moves.Add(1);
 
         }
+        private void Game_WhiteTimeStart()
+        {
+            if (!GameStarted)
+            {
+                this.MainTimer.Start();
+                GameStarted = true;
+            }
+            else return;
+           
+        }
         private object Game_Promote(Move move)
         {
             // make changes...
@@ -71,6 +83,7 @@ namespace PA6_Draft
         }
         private void Board_MouseDown(object sender, MouseEventArgs e)
         {
+            Game_WhiteTimeStart();
             //moves.Add(0);
             int sizeUnit = (int)Math.Round(Board.Image.Width / 16.0);
             int X = e.X / (2*sizeUnit);
