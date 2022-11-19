@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Media;
-using System.Media;
+
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +17,7 @@ namespace PA6_Draft
         private Brush LightColor;
         private Brush DarkColor;
         private SoundPlayer s, t, u, v, w, x;
-        private SoundPlayer s, t, u, v, w, x;
+        
         private bool GameStarted = false;
         private Brush Highlighted;
         private ChessGame Game;
@@ -69,8 +69,7 @@ namespace PA6_Draft
             Game.MakeNoise += Game_Noise;
             
 
-            Game.StopBothTimers += Game_StopBothTimers;
-            Game.MakeNoise += Game_Noise;
+            
             
 
             this.Player1Time.Text = Game.WhiteTimeLimit; // test
@@ -125,40 +124,7 @@ namespace PA6_Draft
         }
        
        
-        private object Game_Noise(Move move) //move piece
-        {
-            if ( (Game.WLimit <= 10000 && !Game.WhiteTurn ) || Game.BLimit <= 10000 && Game.WhiteTurn )
-            {
-                s.Play();
-                return false;
-            }
-            else if (move.Stalemate)
-            {
-                t.Play();
-                return false;
-            }
-            else if (move.CapturedPiece != Piece.NONE)
-            {
-                u.Play();
-                return false;
-            }
-            else if (move.Check)
-            {
-                v.Play();
-                return false;
-            }
-            else if (move.Checkmate)
-            {
-                w.Play();
-                return false;
-            }
-            else
-            {
-                x.Play();
-                return false;
-            }
-            
-        }
+     
         private object Game_StopBothTimers(Move move)
         {
             this.MainTimer.Stop();
