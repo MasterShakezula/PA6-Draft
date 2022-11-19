@@ -84,6 +84,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\DataSources\Chessboard.datasource" />
     <None Include="Properties\DataSources\ChessGame.datasource" />
@@ -107,9 +108,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="bb.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -129,6 +128,12 @@
     <Content Include="br.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Capture.WAV" />
+    <None Include="Resources\Checkmate_Win.WAV" />
+    <None Include="Resources\Move_Piece %281%29.WAV" />
+    <None Include="Resources\Boo! Sound Effect.wav" />
+    <None Include="Resources\CheckSound.WAV" />
+    <None Include="Resources\AlertCaught.wav" />
     <Content Include="wb.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

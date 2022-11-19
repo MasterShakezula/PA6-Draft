@@ -167,7 +167,9 @@ namespace PA6_Draft
     }
     class ChessGame
     {
-        internal event ChessEvent Promote, WhiteTimeStart, StopBothTimers, MakeNoise;  
+        internal event ChessEvent Promote, WhiteTimeStart, StopBothTimers, MakeNoise, Warning;
+        
+        
         // above events are likely needed. Promote was already established. 
         internal Square[][] Board { get; }
         private Square EnPassant = null;
@@ -287,7 +289,11 @@ namespace PA6_Draft
             foreach (Move move in all)//for every legal move of the opponent
             {
                 if (move.X2 == kingSquare.File - 'a' && move.Y2 == 8 - kingSquare.Rank)//if move threatens the king
+                {
+                    
                     return true;
+                }
+                    
             }
             return false;
         }
@@ -617,6 +623,7 @@ namespace PA6_Draft
             if (!LegalMove(move,false))
                 return false;
             WhiteTimeStart(move);
+             // make noise when we moved
             int x1 = move.X1, y1 = move.Y1, x2 = move.X2, y2 = move.Y2;
             move.MovedPiece = Board[x1][y1].Occupant;
             bool readyForEnPassant = false;
@@ -798,7 +805,14 @@ namespace PA6_Draft
                 BlackTimeLimit = TimeToString(BLimit += Increment);
             move.Checkmate = IsCheckmate(!WhiteTurn);
             move.Stalemate = IsStalemate(!WhiteTurn);
+<<<<<<< Updated upstream
+=======
+
+            if (move.Stalemate || move.Checkmate) StopBothTimers(move);
+
+>>>>>>> Stashed changes
             move.Check = IsCheck(!WhiteTurn) && !move.Checkmate;
+            MakeNoise(move);
             Moves.Add(move);
             
             WhiteTurn = !WhiteTurn;

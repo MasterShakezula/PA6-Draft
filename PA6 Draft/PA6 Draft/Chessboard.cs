@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace PA6_Draft
     {
         private Brush LightColor;
         private Brush DarkColor;
+        private SoundPlayer s, t, u, v, w, x;
         private bool GameStarted = false;
         private Brush Highlighted;
         private ChessGame Game;
@@ -27,7 +29,13 @@ namespace PA6_Draft
 
         internal Chessboard(Color Light, Color Dark, ChessGame Game)
         {
-
+            s = new SoundPlayer(PA6_Draft.Properties.Resources.AlertCaught);
+            t = new SoundPlayer(PA6_Draft.Properties.Resources.Boo__Sound_Effect);
+            u = new SoundPlayer(PA6_Draft.Properties.Resources.Capture);
+            v = new SoundPlayer(PA6_Draft.Properties.Resources.CheckSound);
+            w = new SoundPlayer(PA6_Draft.Properties.Resources.Checkmate_Win);
+            x = new SoundPlayer(PA6_Draft.Properties.Resources.Move_Piece__1_);
+            
             InitializeComponent();
 
             PieceImages = new Dictionary<Piece, Bitmap>();
@@ -51,8 +59,14 @@ namespace PA6_Draft
             Player2.Text = Game.Player2Name;
             Game.Promote += Game_Promote;
             Game.WhiteTimeStart += Game_WhiteTimeStart;
+<<<<<<< Updated upstream
             //Game.StopBothTimers += Game_StopBothTimers;
             //Game.MakeNoise += Game_MakeNoise;
+=======
+            Game.StopBothTimers += Game_StopBothTimers;
+            Game.MakeNoise += Game_Noise;
+            
+>>>>>>> Stashed changes
             this.Player1Time.Text = Game.WhiteTimeLimit; // test
             this.Player2Time.Text = Game.BlackTimeLimit; //test
             // copy initial values to the text boxes.
@@ -66,6 +80,50 @@ namespace PA6_Draft
             //moves.Add(1);
 
         }
+<<<<<<< Updated upstream
+=======
+       
+       
+        private object Game_Noise(Move move) //move piece
+        {
+            if ( (Game.WLimit <= 10000 && !Game.WhiteTurn ) || Game.BLimit <= 10000 && Game.WhiteTurn )
+            {
+                s.Play();
+                return false;
+            }
+            else if (move.Stalemate)
+            {
+                t.Play();
+                return false;
+            }
+            else if (move.CapturedPiece != Piece.NONE)
+            {
+                u.Play();
+                return false;
+            }
+            else if (move.Check)
+            {
+                v.Play();
+                return false;
+            }
+            else if (move.Checkmate)
+            {
+                w.Play();
+                return false;
+            }
+            else
+            {
+                x.Play();
+                return false;
+            }
+            
+        }
+        private object Game_StopBothTimers(Move move)
+        {
+            this.MainTimer.Stop();
+            return false;
+        }
+>>>>>>> Stashed changes
         private object Game_WhiteTimeStart(Move move)
         {
             if (!GameStarted)
@@ -214,27 +272,33 @@ namespace PA6_Draft
         {
             if (Game.WhiteTurn)
             {
+                
                 if (Game.WLimit <= MainTimer.Interval)
                 {
+                    
                     Game.WhiteTimeLimit = "0.00";
                     Game.WLimit = 0;
                     MainTimer.Stop();
                     MessageBox.Show(Game.Player1Name + " lost by timeout");
+                  
                 }
                 else
                 {
                     Game.WhiteTimeLimit = Game.TimeToString(Game.WLimit -= MainTimer.Interval);
+                    
                     Player1Time.Text = Game.WhiteTimeLimit;
                 }
             }
             else
             {
+                
                 if (Game.BLimit <= MainTimer.Interval)
                 {
                     Game.BlackTimeLimit = "0.00";
                     Game.BLimit = 0;
                     MainTimer.Stop();
                     MessageBox.Show(Game.Player2Name + " lost by timeout");
+                    
                 }
                 else
                 {
