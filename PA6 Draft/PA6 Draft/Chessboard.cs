@@ -51,7 +51,7 @@ namespace PA6_Draft
             Player2.Text = Game.Player2Name;
             Game.Promote += Game_Promote;
            Game.WhiteTimeStart += Game_WhiteTimeStart;
-            //Game.StopBothTimers += Game_StopBothTimers;
+            Game.StopBothTimers += Game_StopBothTimers;
             //Game.MakeNoise += Game_MakeNoise;
             this.Player1Time.Text = Game.WhiteTimeLimit; // test
             this.Player2Time.Text = Game.BlackTimeLimit; //test
@@ -65,6 +65,11 @@ namespace PA6_Draft
             this.listBox1.DataSource = this.moves;
             //moves.Add(1);
 
+        }
+        private object Game_StopBothTimers(Move move)
+        {
+            this.MainTimer.Stop();
+            return false;
         }
         private object Game_WhiteTimeStart(Move move)
         {
